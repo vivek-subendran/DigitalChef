@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cart</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../DigitalChef/style.css">
+
+	<script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.55/responsiveslides.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.55/responsiveslides.css"></script>
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4fxzjh0_9j9aIXCecrSeDxBztKU5Lzao&callback=initMap"defer></script>
+	<!-- Nav Script Start -->
+	<script>
+		$(window).load(function() {
+	  		$(".btn-nav").on("click tap", function() {
+	    		$(".nav-content").toggleClass("showNav hideNav").removeClass("hidden");
+	    		$(this).toggleClass("animated");
+	 		 });
+		});
+		$(function() {
+	    	$(".rslides").responsiveSlides();
+	  	});
+	</script>
+	<!-- Nav Script End -->
+    <!-- SignOut Message Script Start -->
+	<script>
+  		function SignOut() {
+    		var myText = "Signed-out Sucessful!!";
+    		alert (myText);
+  		}
+  	</script>
+  	<!-- SignOut Message Script End -->
+  	<!-- Check out Script Start -->
+  	<script>
+  		function CheckOut() {
+    		var myText = "Check Out Sucessful!!";
+    		alert (myText);
+  		}
+  	</script>
+  	<!-- Check out End -->
+  	<!-- Clear Cart start -->
+  	<script>
+  		function ClearCart() {
+    		var myText = "Cart Cleared!!";
+    		alert (myText);
+  		}
+  	</script>
+  	<!-- Clear Cart End -->
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header" data-position="fixed">
+			<!-- HamBurger Nav Start -->
+			<div class="nav">
+			  	<button class="btn-nav">
+			    	<span class="icon-bar top"></span>
+			    	<span class="icon-bar middle"></span>
+			    	<span class="icon-bar bottom"></span>
+			  	</button>
+			</div>
+			<div class="center">
+				<a href="../DigitalChef/Home.html">
+					<img src="../DigitalChef/Pic/Logo.png" vertical-align="center" style="width:30%;height:30%;position:all;"/>
+				</a>
+			</div>
+			<div class="navi">
+				<a href="../DigitalChef/Cart.html" rel="external" style="color:white;">
+					<i class="bi bi-cart" href></i>
+				</a>
+				<a href="../DigitalChef/UserProf.html" rel="external" style="color:white;">
+					<i class="bi bi-person-circle"></i>
+				</a>
+			</div>
+		</div>
+		<div class="nav-content hideNav hidden">
+		  	<ul class="nav-list">
+		  		<li class="nav-item"><a href="#" class="item-anchor"><i class="bi bi-person-circle"></i>      Vivek</a></li>
+		    	<li class="nav-item"><a href="../DigitalChef/Home.html" class="item-anchor">Home</a></li>
+		    	<li class="nav-item"><a href="../DigitalChef/AboutUs.html" class="item-anchor">About Us</a></li>
+		    	<li class="nav-item"><a href="../DigitalChef/UserProf.html" class="item-anchor">User Profile</a></li>
+		    	<li class="nav-item"><a href="../DigitalChef/Favourites.html" class="item-anchor">Favourites</a></li>
+		    	<li class="nav-item"><a href="../DigitalChef/OrderHistory.html" class="item-anchor">Order History</a></li>
+		    	<li class="nav-item"><a href="../DigitalChef/Cart.html" class="item-anchor">Cart</a></li>
+		    	<li class="nav-item"><a onclick="SignOut()" href="../DigitalChef/index.html" class="item-anchor">Sign Out</a></li>
+		  	</ul>
+		</div>
+		<!-- HamBurger Nav End -->
+		<div data-role="main" class="ui-content">
+			<br>
+			<h3 style="color: white; margin-left: 20px;font-size: 2em;"><b>Cart</b>
+				<a onclick="ClearCart()" href="../DigitalChef/ClearCart.html" rel="external" class="btn btn-warning" style=" margin-left: 580px">
+					Clear Cart
+				</a>
+			</h3>
+			<br>
+			<div style="text-align: center;">
+				<label for="textinput-hide" class="ui-hidden-accessible">Address</label>
+				<i class="bi bi-geo-alt" style="font-size: 30px; color: white"></i>
+				<input type="text" name="address" id="address" placeholder="Address" value="">
+				<br>
+				<br>
+				<label for="textinput-hide" class="ui-hidden-accessible">Delivery Note</label>
+				<i class="bi bi-journal-plus" style="font-size: 30px; color: white"></i>
+				<input type="text" name="dnote" id="dnote" placeholder="Delivery Note" value="">
+				<br>
+				<br>
+			</div>
+			<div>
+				<h4 style="color: white; margin-left: 20px;font-size: 2em;"><b>Items</b></h4>
+			</div>
+			<br>
+			<img src="../DigitalChef/Pic/ClearCart.jpeg" style="width: 360px; height: 300px;margin-left: 235px;">
+			<br>
+		</div>
+		<!-- Footer Start -->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<h6>
+					<center>Contact Us</center>
+				</h6>
+				<ul class="footer-links">
+	            	<div class="col-md-4 col-sm-6 col-xs-12">
+						<ul class="social-icons">
+	  						<li><a class="facebook" href="#"><i class="bi bi-telephone"></i></a></li>
+	  						<div class="contact">0112762534</div>
+	  					</ul>
+						<ul class="social-icons">
+	  						<li><a class="facebook" href="#"><i class="bi bi-envelope"></i></a></li>
+	  						<div class="contact1">chyrus.2018160@iit.ac.lk</div>
+	  					</ul>
+	  				</div>
+	  			</ul>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<h6>
+					<center>Follow Us</center>
+				</h6>
+				<ul class="footer-links1">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<ul class="social-icons">
+						<li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+						<li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+						<li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>
+						<li><a class="instagram" href="#"><i class="bi bi-instagram"></i></i></a></li>    
+					</ul>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+				<a href="#">Digital Chef</a>.
+			</p>
+		</div>
+	</footer>
+	<!-- Footer End -->
+</body>
+</html>
